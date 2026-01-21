@@ -3,19 +3,15 @@ export default function Page() {
     "use server";
     const formFields = {
       email: formData.get("email"),
-      message: formData.get("message")
+      message: formData.get("message"),
     };
     console.log("formFields", formFields);
-    console.log(
-      "TODO: Send these form field values to a backend"
-    );
+    console.log("TODO: Send these form field values to a backend");
     return formFields;
   }
   return (
     <main className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md">
-      <h1 className="text-2xl font-bold text-center mb-6">
-        Contact us!
-      </h1>
+      <h1 className="text-2xl font-bold text-center mb-6">Contact us!</h1>
       <form className="space-y-4" action={submitForm}>
         <div>
           <label
@@ -47,11 +43,14 @@ export default function Page() {
             className="border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="text-white bg-blue-600 rounded-md p-3"
-        >
+        <button type="submit" className="text-white bg-blue-600 rounded-md p-3">
           Send Message
+        </button>
+        <button
+          type="reset"
+          className="text-gray-700 bg-gray-200 rounded-md p-3"
+        >
+          Reset
         </button>
       </form>
     </main>
