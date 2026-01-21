@@ -1,12 +1,22 @@
+import Image from "next/image";
+
 async function getData() {
   const res = await fetch("https://snowtooth-hotel-api.fly.dev");
   return res.json();
 }
 
-function HotelRow({ hotel }) {
+function HotelBlock({ id, name, capacity }) {
+  const imageLoader = ({ src }) => {  
+    return `./hotels/${src}.jpeg`;
+  }
   return (
     <div>
-      <h2>Hotel name: {hotel.name}, Capacity: {hotel.capacity}</h2>
+      <h2>Hotel name: {name}, Capacity: {capacity}</h2>
+      <Image
+        src={id}
+        width={300}
+        height={300}
+      />  
     </div>
   );
 }
@@ -19,7 +29,7 @@ export default async function Page() {
       <div>
         <h1>Hotel Details</h1>
         <div>{data.map((hotel) => (
-          <HotelRow key={hotel.id} hotel={hotel} location={hotel.location} capacity={hotel.capacity} />
+          <HotelBlock key={hotel.id} name={hotel.name} capacity={hotel.capacity} />
         ))}</div>
       </div>
     </main>

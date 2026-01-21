@@ -10,7 +10,7 @@ function Header({ name, year }) {
   );
 }
 /* 
-cd .. && mkdir -p 04_01b && cd 04_01b && git fetch upstream && git checkout -b 04_01b && npm crea≈te vite@latest . -- --template react
+cd .. && mkdir -p 04_01b && cd 04_01b && git fetch upstream && git checkout -b 04_01b && npm create vite@latest . -- --template react
 */
 const items = [
   "Macaroni and Cheese",
